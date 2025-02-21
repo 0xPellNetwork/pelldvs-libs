@@ -133,21 +133,13 @@ func (s *Signature) Add(otherS *Signature) *Signature {
 
 // Verify a message against a public key
 func (s *Signature) Verify(pubkey *G2Point, message [32]byte) (bool, error) {
-	ok, err := bn254utils.VerifySig(s.G1Affine, pubkey.G2Affine, message)
-	if err != nil {
-		return false, err
-	}
-	return ok, nil
+	return bn254utils.VerifySig(s.G1Affine, pubkey.G2Affine, message)
 }
 
 type PrivateKey = fr.Element
 
 func NewPrivateKey(sk string) (*PrivateKey, error) {
-	ele, err := new(fr.Element).SetString(sk)
-	if err != nil {
-		return nil, err
-	}
-	return ele, nil
+	return new(fr.Element).SetString(sk)
 }
 
 type KeyPair struct {
@@ -216,11 +208,7 @@ func (k *KeyPair) SaveToFile(path string, password string) error {
 		fmt.Println("Error creating directories:", err)
 		return err
 	}
-	err = os.WriteFile(path, data, 0644)
-	if err != nil {
-		return err
-	}
-	return nil
+	return os.WriteFile(path, data, 0644)
 }
 
 func ReadPrivateKeyFromFile(path string, password string) (*KeyPair, error) {
