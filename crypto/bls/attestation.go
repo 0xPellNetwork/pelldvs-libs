@@ -139,11 +139,7 @@ func (s *Signature) Verify(pubkey *G2Point, message [32]byte) (bool, error) {
 type PrivateKey = fr.Element
 
 func NewPrivateKey(sk string) (*PrivateKey, error) {
-	ele, err := new(fr.Element).SetString(sk)
-	if err != nil {
-		return nil, err
-	}
-	return ele, nil
+	return new(fr.Element).SetString(sk)
 }
 
 type KeyPair struct {
