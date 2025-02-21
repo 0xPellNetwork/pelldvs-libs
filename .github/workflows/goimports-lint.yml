@@ -1,0 +1,31 @@
+name: Goimports Lint
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-check:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache: true
+
+      - name: Install tools
+        run: |
+          go install github.com/incu6us/goimports-reviser/v3@latest
+
+      - name: Format imports
+        run: make lint-imports
+
+      - name: Verify goimports
+        run: |
+          git diff --exit-code || { echo "Error: Goimports are not up to date."; exit 1; }
