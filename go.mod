@@ -1,4 +1,4 @@
-module github.com/0xPellNetwork/golibs
+module github.com/0xPellNetwork/pelldvs-libs
 
 go 1.23
 

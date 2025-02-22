@@ -9,7 +9,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/0xPellNetwork/golibs/log"
+	"github.com/0xPellNetwork/pelldvs-libs/log"
 )
 
 func TestTracingLogger(t *testing.T) {

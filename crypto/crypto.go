@@ -1,8 +1,8 @@
 package crypto
 
 import (
-	"github.com/0xPellNetwork/golibs/bytes"
-	"github.com/0xPellNetwork/golibs/crypto/tmhash"
+	"github.com/0xPellNetwork/pelldvs-libs/bytes"
+	"github.com/0xPellNetwork/pelldvs-libs/crypto/tmhash"
 )
 
 const (
@@ -42,7 +42,7 @@ type Symmetric interface {
 }
 
 // If a new key type implements batch verification,
-// the key type must be registered in github.com/0xPellNetwork/golibs/crypto/batch
+// the key type must be registered in github.com/0xPellNetwork/pelldvs-libs/crypto/batch
 type BatchVerifier interface {
 	// Add appends an entry into the BatchVerifier.
 	Add(key PubKey, message, signature []byte) error

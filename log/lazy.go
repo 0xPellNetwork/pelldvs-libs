@@ -3,7 +3,7 @@ package log
 import (
 	"fmt"
 
-	plbytes "github.com/0xPellNetwork/golibs/bytes"
+	plbytes "github.com/0xPellNetwork/pelldvs-libs/bytes"
 )
 
 type LazySprintf struct {

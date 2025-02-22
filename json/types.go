@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	plsync "github.com/0xPellNetwork/golibs/sync"
+	plsync "github.com/0xPellNetwork/pelldvs-libs/sync"
 )
 
 var (

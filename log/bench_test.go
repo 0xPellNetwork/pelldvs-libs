@@ -9,7 +9,7 @@ import (
 
 	"github.com/rs/zerolog"
 
-	"github.com/0xPellNetwork/golibs/log"
+	"github.com/0xPellNetwork/pelldvs-libs/log"
 )
 
 const message = "test message"

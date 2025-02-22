@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	plsync "github.com/0xPellNetwork/golibs/sync"
+	plsync "github.com/0xPellNetwork/pelldvs-libs/sync"
 )
 
 var (

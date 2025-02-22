@@ -64,7 +64,7 @@ linters-settings:
           - $gostd
           - github.com/rs/zerolog
           - github.com/cometbft/cometbft-db
-          - github.com/0xPellNetwork/golibs
+          - github.com/0xPellNetwork/pelldvs-libs
           - github.com/cosmos
           - github.com/btcsuite/btcd/btcec/v2
           - github.com/BurntSushi/toml
@@ -115,7 +115,7 @@ linters-settings:
           - $gostd
           - github.com/rs/zerolog
           - github.com/cometbft/cometbft-db
-          - github.com/0xPellNetwork/golibs
+          - github.com/0xPellNetwork/pelldvs-libs
           - github.com/0xPellNetwork/contracts
           - github.com/0xPellNetwork/pell-middleware-contracts
           - github.com/cosmos

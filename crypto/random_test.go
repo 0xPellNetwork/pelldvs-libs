@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/0xPellNetwork/golibs/crypto"
+	"github.com/0xPellNetwork/pelldvs-libs/crypto"
 )
 
 // the purpose of this test is primarily to ensure that the randomness

@@ -20,5 +20,5 @@ test:
 # Run goimports-reviser to lint and format imports
 lint-imports:
 	@find . -name "*.go" -not -path "./vendor/*" -not -path "./.git/*" | while read -r file; do \
-		goimports-reviser -company-prefixes github.com/0xPellNetwork/golibs -rm-unused -format "$$file"; \
+		goimports-reviser -company-prefixes github.com/0xPellNetwork/pelldvs-libs -rm-unused -format "$$file"; \
 	done
