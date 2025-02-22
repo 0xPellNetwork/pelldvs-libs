@@ -3,7 +3,7 @@ package crypto_test
 import (
 	"fmt"
 
-	"github.com/0xPellNetwork/golibs/crypto"
+	"github.com/0xPellNetwork/pelldvs-libs/crypto"
 )
 
 func ExampleSha256() {

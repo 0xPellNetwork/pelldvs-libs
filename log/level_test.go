@@ -5,7 +5,7 @@ import (
 
 	"gotest.tools/v3/assert"
 
-	"github.com/0xPellNetwork/golibs/log"
+	"github.com/0xPellNetwork/pelldvs-libs/log"
 )
 
 func TestParseLogLevel(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/0xPellNetwork/golibs/json"
+	"github.com/0xPellNetwork/pelldvs-libs/json"
 )
 
 func TestMarshal(t *testing.T) {

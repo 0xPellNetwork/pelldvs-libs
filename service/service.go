@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/0xPellNetwork/golibs/log"
+	"github.com/0xPellNetwork/pelldvs-libs/log"
 )
 
 var (

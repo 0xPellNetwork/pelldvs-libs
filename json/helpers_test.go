@@ -3,7 +3,7 @@ package json_test
 import (
 	"time"
 
-	"github.com/0xPellNetwork/golibs/json"
+	"github.com/0xPellNetwork/pelldvs-libs/json"
 )
 
 // Register Car, an instance of the Vehicle interface.

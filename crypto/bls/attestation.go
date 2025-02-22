@@ -13,7 +13,7 @@ import (
 	"github.com/consensys/gnark-crypto/ecc/bn254/fr"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 
-	bn254utils "github.com/0xPellNetwork/golibs/crypto/bn254"
+	bn254utils "github.com/0xPellNetwork/pelldvs-libs/crypto/bn254"
 )
 
 // We are using similar structure for saving bls keys as ethereum keystore
@@ -133,13 +133,21 @@ func (s *Signature) Add(otherS *Signature) *Signature {
 
 // Verify a message against a public key
 func (s *Signature) Verify(pubkey *G2Point, message [32]byte) (bool, error) {
-	return bn254utils.VerifySig(s.G1Affine, pubkey.G2Affine, message)
+	ok, err := bn254utils.VerifySig(s.G1Affine, pubkey.G2Affine, message)
+	if err != nil {
+		return false, err
+	}
+	return ok, nil
 }
 
 type PrivateKey = fr.Element
 
 func NewPrivateKey(sk string) (*PrivateKey, error) {
-	return new(fr.Element).SetString(sk)
+	ele, err := new(fr.Element).SetString(sk)
+	if err != nil {
+		return nil, err
+	}
+	return ele, nil
 }
 
 type KeyPair struct {
@@ -208,7 +216,11 @@ func (k *KeyPair) SaveToFile(path string, password string) error {
 		fmt.Println("Error creating directories:", err)
 		return err
 	}
-	return os.WriteFile(path, data, 0644)
+	err = os.WriteFile(path, data, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func ReadPrivateKeyFromFile(path string, password string) (*KeyPair, error) {
