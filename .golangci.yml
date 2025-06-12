@@ -145,6 +145,7 @@ linters-settings:
           - github.com/prometheus/client_golang/prometheus/testutil
           - github.com/stretchr/testify/assert
           - github.com/stretchr/testify/require
+          - gotest.tools/v3/assert
   revive:
     enable-all-rules: true
     rules:
