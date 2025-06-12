@@ -14,4 +14,6 @@ func TestNewLogger(t *testing.T) {
 	levelInfoLogger := NewLogger(os.Stdout, LevelOption(zerolog.InfoLevel))
 	levelInfoLogger.Debug("this log line should not be displayed, because the log level is set to info")
 	levelInfoLogger.Info("this log line should be displayed")
+
+	logger.Warn("hello world", "msg", "df")
 }

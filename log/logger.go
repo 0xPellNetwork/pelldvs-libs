@@ -20,6 +20,10 @@ type Logger interface {
 	// The key of the tuple must be a string.
 	Info(msg string, keyVals ...any)
 
+	// Warn takes a message and a set of key/value pairs and logs with level WARN.
+	// The key of the tuple must be a string.
+	Warn(msg string, keyVals ...any)
+
 	// Error takes a message and a set of key/value pairs and logs with level ERR.
 	// The key of the tuple must be a string.
 	Error(msg string, keyVals ...any)
@@ -89,6 +93,12 @@ func NewCustomLogger(logger zerolog.Logger) Logger {
 // The key of the tuple must be a string.
 func (l zeroLogWrapper) Info(msg string, keyVals ...interface{}) {
 	l.Logger.Info().Fields(keyVals).Msg(msg)
+}
+
+// Warn takes a message and a set of key/value pairs and logs with level WARN.
+// The key of the tuple must be a string.
+func (l zeroLogWrapper) Warn(msg string, keyVals ...interface{}) {
+	l.Logger.Warn().Fields(keyVals).Msg(msg)
 }
 
 // Error takes a message and a set of key/value pairs and logs with level DEBUG.
