@@ -58,8 +58,20 @@ func (bz HexBytes) String() string {
 func (bz HexBytes) Format(s fmt.State, verb rune) {
 	switch verb {
 	case 'p':
-		fmt.Fprintf(s, "%p", bz) //nolint: errcheck
+		fprintf, err := fmt.Fprintf(s, "%p", bz)
+		if err != nil {
+			return
+		}
+		if fprintf == 0 {
+			return
+		}
 	default:
-		fmt.Fprintf(s, "%X", []byte(bz)) //nolint: errcheck
+		fprintf, err := fmt.Fprintf(s, "%X", []byte(bz))
+		if err != nil {
+			return
+		}
+		if fprintf == 0 {
+			return
+		}
 	}
 }

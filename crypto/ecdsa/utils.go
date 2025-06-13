@@ -99,9 +99,9 @@ func GetAddressFromKeyStoreFile(keyStoreFile string) (gethcommon.Address, error)
 		return gethcommon.Address{}, err
 	}
 
-	// The reason we have map[string]interface{} is because `address` is string but the `crypto` field is an object
+	// The reason we have map[string]any is because `address` is string but the `crypto` field is an object
 	// we don't care about the object in this method, but we still need to unmarshal it
-	m := make(map[string]interface{})
+	m := make(map[string]any)
 	if err := json.Unmarshal(keyJSON, &m); err != nil {
 		return gethcommon.Address{}, err
 	}
